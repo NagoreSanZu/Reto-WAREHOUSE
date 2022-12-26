@@ -2,7 +2,7 @@ package wareHouse;
 
 import java.util.ArrayList;
 
-public class LineaFactura {
+public class LineaFactura extends Factura {
  
 	private int numero;
 	private ArrayList Articulo = new ArrayList();
