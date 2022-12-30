@@ -48,5 +48,17 @@ public abstract class  Articulo  extends LineaFactura{
 		this.stock = stock;
 	}
 	
+	public Articulo() {
+		
+	}
+	
+	public Articulo(String name, String code, String mark, int capacidadBotella, double preciom, int stock) {
+		this.name=name;
+		this.code=code;
+		this.mark=mark;
+		this.capacidadBotella=capacidadBotella;
+		this.precio=precio;
+		this.stock=stock;
+	}
 	
 }
