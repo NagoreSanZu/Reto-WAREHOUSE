@@ -1,9 +1,14 @@
 package wareHouse;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
+
 
 
 
@@ -49,8 +54,31 @@ public class Factura {
 		this.concepto = concepto;
 	}
 	
+	//pedir datos de la factura
+	
+	public void pedirDatos(Factura factura) throws ParseException {
+		Scanner teclado = new Scanner(System.in);
+		SimpleDateFormat formatoLectura1 = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println("DATOS DE LA FACTURA");
+		System.out.println("Cual es el numero de la factura?");
+		int numeroFact=Integer.parseInt(teclado.nextLine());
+		System.out.println("Cual es el nombre de la Empresa?");
+		String nombreEmpresaFact=teclado.nextLine();
+		System.out.println("Cual es la fecha?? ");
+		String fechaFact= teclado.nextLine();
+		Date fechaLeida = formatoLectura1.parse(fechaFact);
+		System.out.println("Indica cual es el concepto:");
+		String conceptoFact=teclado.nextLine();
+		
+		factura.setNumero(numeroFact);
+		factura.setNombreEmpresa(nombreEmpresaFact);
+		factura.setFecha(fechaLeida);
+		factura.setConcepto(conceptoFact);
+		
+	}
+	
 	//añadir una linea a la factura
-	public void addLinea(LineaFactura linea, Articulo articulo ){
+	public void addLinea(LineaFactura linea, Articulo artikuloak ){
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("DATOS DE LINEAFACTURA");
 		System.out.println("Indica el numero de la linea");
@@ -100,7 +128,7 @@ public class Factura {
 
 	
 	
-	/*
+	
 	public void imprimir() {
 		System.out.println("DATOS DE LA FACTURA");
 		System.out.println("El numero de la linea es:  "+this.numero);
@@ -113,9 +141,40 @@ public class Factura {
 			System.out.println("DATOS DE LA LINEA");
 			System.out.println(lineaFactura);
 		}
+		
+		
+		
+		
 	}
 	
-	*/
+	
+//	//guardar el fichero
+//	
+//	public void guardarFichero(String nombreFichero) throws FileNotFoundException {
+//		PrintWriter writer = new PrintWriter(nombreFichero);
+//		writer.println(this.nombre+";"+this.estadio);
+//		for (Jugador jugador : jugadores) {
+//			writer.println(jugador.formatoFichero());
+//			
+//		}
+//		
+//		
+//	
+//	writer.close();
+//	}
+//	//nombre fichero
+//	
+//	public String nombreFichero( Factura numeroFactLin) {
+//		Scanner teclado = new Scanner(System.in);
+//		String nombreFichero;
+//		System.out.println("¿Como se llama tu equipo?");
+//		nombreFichero= teclado.nextLine();
+//		nombreFichero=nombreFichero.replaceAll (" ", "_");
+//		
+//		return "facturas/"+numeroFactLin+"_"+.txt";
+//		
+//	}
+	
 
 
 
