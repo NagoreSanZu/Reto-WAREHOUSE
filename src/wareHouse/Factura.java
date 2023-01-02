@@ -75,10 +75,11 @@ public class Factura {
 		factura.setFecha(fechaLeida);
 		factura.setConcepto(conceptoFact);
 		
+		
 	}
 	
 	//añadir una linea a la factura
-	public void addLinea(LineaFactura linea, Articulo artikuloak ){
+	public void addLinea(LineaFactura linea ){
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("DATOS DE LINEAFACTURA");
 		System.out.println("Indica el numero de la linea");
@@ -148,15 +149,14 @@ public class Factura {
 	}
 	
 	
-//	//guardar el fichero
-//	
-//	public void guardarFichero(String nombreFichero) throws FileNotFoundException {
-//		PrintWriter writer = new PrintWriter(nombreFichero);
-//		writer.println(this.nombre+";"+this.estadio);
-//		for (Jugador jugador : jugadores) {
-//			writer.println(jugador.formatoFichero());
-//			
-//		}
+	//guardar el fichero
+	
+	public void guardarFichero(String nombreFichero) throws FileNotFoundException {
+		PrintWriter writer = new PrintWriter(nombreFichero);
+		writer.println("numero factura: "+this.numero+", Nombre de la empresa: "+this.nombreEmpresa+", Fecha: "+this.fecha+", Concepto: "+this.concepto);
+		for (LineaFactura lineaFactura : lineas) {
+			writer.println(lineaFactura.toString());
+		}
 //		
 //		
 //	
@@ -179,4 +179,5 @@ public class Factura {
 
 
 	
+	}
 }
