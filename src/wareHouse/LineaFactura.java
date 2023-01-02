@@ -1,6 +1,9 @@
 package wareHouse;
 
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+
 
 public class LineaFactura extends Factura {
  
@@ -42,6 +45,22 @@ public class LineaFactura extends Factura {
 		this.numero=numero;
 		this.articulo=articulo;
 		this.cantidad=cantidad;
+	}
+	@Override
+	public String toString() {
+		
+
+		return "LineaFactura numero=" + numero +  ", cantidad=" + cantidad ;
+	}
+	
+	public void imprimirArticulo() throws FileNotFoundException {
+		Factura fichero = new Factura();
+		PrintWriter writer = new PrintWriter(fichero.nombreFichero());
+		for (Articulo articulo2 : articulo) {
+			writer.println(articulo2.toString());
+	
+		}
+		writer.close();
 	}
 	
 	

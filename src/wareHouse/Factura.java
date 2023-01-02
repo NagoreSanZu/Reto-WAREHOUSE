@@ -160,13 +160,17 @@ public class Factura {
 			writer.println(lineaFactura.toString());
 		}
 		
+		LineaFactura imprimatu= new LineaFactura();
+		imprimatu.imprimirArticulo();
+		
+		
 		
 	
 	writer.close();
 	}
 //	//nombre fichero
 	
-	public String nombreFichero( Factura numero, Factura fecha) {
+	public String nombreFichero() {
 	
 		
 		return "facturas/"+this.numero+"_"+this.fecha+".txt";
