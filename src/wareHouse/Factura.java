@@ -157,11 +157,11 @@ public class Factura {
 		for (LineaFactura lineaFactura : lineas) {
 			writer.println(lineaFactura.toString());
 		}
-//		
-//		
-//	
-//	writer.close();
-//	}
+		
+		
+	
+	writer.close();
+	}
 //	//nombre fichero
 //	
 //	public String nombreFichero( Factura numeroFactLin) {
@@ -180,4 +180,3 @@ public class Factura {
 
 	
 	}
-}
