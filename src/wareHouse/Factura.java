@@ -115,6 +115,8 @@ public class Factura {
 		return total;
 	}
 */
+	
+	
 	//hacer un iterator para borrar linea
 
 	public void elimLinea (int  linea) {
@@ -163,17 +165,13 @@ public class Factura {
 	writer.close();
 	}
 //	//nombre fichero
-//	
-//	public String nombreFichero( Factura numeroFactLin) {
-//		Scanner teclado = new Scanner(System.in);
-//		String nombreFichero;
-//		System.out.println("¿Como se llama tu equipo?");
-//		nombreFichero= teclado.nextLine();
-//		nombreFichero=nombreFichero.replaceAll (" ", "_");
-//		
-//		return "facturas/"+numeroFactLin+"_"+.txt";
-//		
-//	}
+	
+	public String nombreFichero( Factura numero, Factura fecha) {
+	
+		
+		return "facturas/"+this.numero+"_"+this.fecha+".txt";
+		
+	}
 	
 
 
