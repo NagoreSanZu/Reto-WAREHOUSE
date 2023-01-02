@@ -105,7 +105,7 @@ public class Factura {
 		linea.setCantidad(cantidadFacLin);
 		lineas.add(linea);
 	}
-		/*
+		
 	public double precioTotal() {
 		double total=0;
 		for (int i = 0; i < lineas.size(); i++) {
@@ -114,7 +114,7 @@ public class Factura {
 		
 		return total;
 	}
-*/
+
 	
 	
 	//hacer un iterator para borrar linea
