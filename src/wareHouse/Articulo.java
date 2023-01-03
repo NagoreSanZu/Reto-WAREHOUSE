@@ -158,7 +158,6 @@ public abstract class  Articulo  extends LineaFactura{
 			refres.setZumo(zumoRefresTF);
 			refres.setGaseoso(gaseosaRefresTF);
 			refres.setCantidadAzucar(cantidadRefresco);
-			
 			refresco.add(refres);
 			
 			
