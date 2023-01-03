@@ -74,7 +74,7 @@ public abstract class  Articulo  extends LineaFactura{
 				+ ", precio=" + precio + ", stock=" + stock ;
 	}
 	
-	public void incrementarStock(Vino bino, Cerveza cerv) {
+	public void incrementarStock(Vino bino, Cerveza cerv, Refresco refres) {
 	
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("De que articulo quieres incrementar el stock? ");
@@ -125,6 +125,42 @@ public abstract class  Articulo  extends LineaFactura{
 				if (this.name == "cerveza"|| this.name=="Cerveza") {
 					stock = stock +1;
 				}
+			
+		}
+		
+		if(numInc==3) {
+			System.out.println("INCREMENTAR REFRESCO");
+			System.out.println("Que sabor tiene");
+			String saborRefres=teclado.nextLine();
+			System.out.println("Es un zumo? si/no");
+			String zumRefres=teclado.nextLine();
+			boolean zumoRefresTF =false;
+			if(zumRefres=="si"||zumRefres=="Si") {
+				zumoRefresTF=true;
+			}
+			if (zumRefres=="no"||zumRefres=="No") {
+				zumoRefresTF=false;
+			}
+			System.out.println("Tiene gaseosa?si/no");
+			String gaseosaRefres=teclado.nextLine();
+			boolean gaseosaRefresTF=false;
+			if(gaseosaRefres=="si"||gaseosaRefres=="Si") {
+				gaseosaRefresTF=true;
+			}
+			if (gaseosaRefres=="no"||gaseosaRefres=="No") {
+				gaseosaRefresTF=false;
+			}
+			
+			System.out.println("Cuanta cantidad de azucar tiene?");
+			int cantidadRefresco=Integer.parseInt(teclado.nextLine());
+			
+			refres.setSabor(saborRefres);
+			refres.setZumo(zumoRefresTF);
+			refres.setGaseoso(gaseosaRefresTF);
+			refres.setCantidadAzucar(cantidadRefresco);
+			
+			refresco.add(refres);
+			
 			
 		}
 			
