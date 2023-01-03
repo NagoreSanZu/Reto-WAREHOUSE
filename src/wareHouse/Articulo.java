@@ -159,7 +159,13 @@ public abstract class  Articulo  extends LineaFactura{
 			refres.setGaseoso(gaseosaRefresTF);
 			refres.setCantidadAzucar(cantidadRefresco);
 			refresco.add(refres);
-			
+		
+			for (Articulo articulo2 : articulo) {
+				if (this.name == "refresco"|| this.name=="Refresco") {
+					stock = stock +1;
+				}
+		
+			}
 			
 		}
 			
