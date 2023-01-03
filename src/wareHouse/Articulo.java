@@ -107,6 +107,7 @@ public abstract class  Articulo  extends LineaFactura{
 				}
 		
 			}
+		}
 			
 		if (numInc ==2) {
 			System.out.println("INCREMENTAR CERVEZA");
@@ -127,7 +128,7 @@ public abstract class  Articulo  extends LineaFactura{
 				}
 			
 		}
-		
+		}
 		if(numInc==3) {
 			System.out.println("INCREMENTAR REFRESCO");
 			System.out.println("Que sabor tiene");
@@ -168,14 +169,23 @@ public abstract class  Articulo  extends LineaFactura{
 			}
 			
 		}
-			
-		
-			
-			
-			
-		}
 	}
 	
 	
-}
+	
+	//neceista mejoras 
+
+	public void disminuirStock() {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Indica el codigo del articulo del cual quieres diminuir el stock");
+		String ResDisStock=teclado.nextLine();
+		for (Articulo articulo2 : articulo) {
+			if(ResDisStock == this.code) {
+				stock= stock-1;
+			}
+			
+		}
+		
+		
+	}	
 }
