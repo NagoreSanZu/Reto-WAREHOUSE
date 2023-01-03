@@ -101,12 +101,12 @@ public class Factura {
 		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
 		linea.setNumero(numeroFactLin);
 		linea.setArticulo(articuloNum,articuloNom,articuloMarc, articuloCap,articuloPrec);
-	
 		linea.setCantidad(cantidadFacLin);
 		lineas.add(linea);
 	}
 		
 	public double precioTotal() {
+	
 		double total=0;
 		for (int i = 0; i < lineas.size(); i++) {
 			total=total+lineas.get(i).precioTotal();

@@ -38,5 +38,7 @@ public class Vino extends Articulo  implements Alcoholico{
 		this.gradosAlcohol = gradosAlcohol;
 	}
 	
+   
+	
 	
 }

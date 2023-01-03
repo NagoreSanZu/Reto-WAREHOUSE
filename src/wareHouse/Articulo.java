@@ -189,7 +189,7 @@ public abstract class  Articulo  extends LineaFactura{
 		
 	}	
 	
-	
+	//visualizar
 	public void visualizarArticulo() {
 		for (Articulo articulo2 : articulo) {
 			System.out.println(articulo2);

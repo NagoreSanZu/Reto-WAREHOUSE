@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class LineaFactura extends Factura {
  
 	private int numero;
-	private ArrayList <Articulo>articulo = new ArrayList();
+	 ArrayList <Articulo>articulo = new ArrayList<Articulo>();
 	private int cantidad;
 
 	
@@ -51,6 +51,11 @@ public class LineaFactura extends Factura {
 		
 
 		return "LineaFactura numero=" + numero +  ", cantidad=" + cantidad ;
+	}
+
+	public double precioTotal(ArrayList<Articulo> articulo, double articuloPrec) {
+		
+		return articuloPrec *cantidad;
 	}
 	
 	public void imprimirArticulo() throws FileNotFoundException {

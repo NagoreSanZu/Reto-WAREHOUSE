@@ -1,5 +1,5 @@
 package wareHouse;
 
-public class Almacen extends Articulo{
+public class Almacen {
 
 }
