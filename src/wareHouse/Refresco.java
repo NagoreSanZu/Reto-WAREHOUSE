@@ -38,6 +38,11 @@ public class Refresco extends Articulo{
 				+ cantidadAzucar ;
 	}
 	
-	
+	//visualizar propiedades del refresco
+	public void visualizarPropiedades() {
+		for (Refresco Refres : refresco) {
+			System.out.println(Refres);
+		}
+	}
 	
 }
