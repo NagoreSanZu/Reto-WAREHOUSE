@@ -32,6 +32,12 @@ public class Refresco extends Articulo{
 	public void setCantidadAzucar(int cantidadAzucar) {
 		this.cantidadAzucar = cantidadAzucar;
 	}
+	@Override
+	public String toString() {
+		return "Refresco sabor=" + sabor + ", zumo=" + zumo + ", gaseoso=" + gaseoso + ", cantidadAzucar="
+				+ cantidadAzucar ;
+	}
+	
 	
 	
 }
