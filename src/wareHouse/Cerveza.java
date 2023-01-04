@@ -25,6 +25,11 @@ public class Cerveza extends Articulo implements Alcoholico{
 	public void setGradosAlcohol(double gradosAlcohol) {
 		this.gradosAlcohol = gradosAlcohol;
 	}
+	@Override
+	public String toString() {
+		return "Cerveza origen=" + origen + ", cereales=" + cereales + ", gradosAlcohol=" + gradosAlcohol;
+	}
+	
 	
 	
 }
