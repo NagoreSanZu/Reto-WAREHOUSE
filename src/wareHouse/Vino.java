@@ -37,6 +37,11 @@ public class Vino extends Articulo  implements Alcoholico{
 	public void setGradosAlcohol(double gradosAlcohol) {
 		this.gradosAlcohol = gradosAlcohol;
 	}
+	@Override
+	public String toString() {
+		return "Vino color=" + color + ", origen=" + origen + ", anio=" + anio + ", tipoDeUva=" + tipoDeUva
+				+ ", gradosAlcohol=" + gradosAlcohol ;
+	}
 	
    
 	
