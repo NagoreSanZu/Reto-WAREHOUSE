@@ -45,4 +45,20 @@ public class Refresco extends Articulo{
 		}
 	}
 	
+	
+	//es saludable?
+	
+	public void esSaludable() {
+		boolean esSaludableR =false;
+		for (Refresco Refres : refresco) {
+			if (Refres.getCantidadAzucar() <= 20) {
+				esSaludableR =true;
+				System.out.println(Refres);
+			}else {
+				esSaludableR=false;
+			}
+			
+		}
+	}
+	
 }
