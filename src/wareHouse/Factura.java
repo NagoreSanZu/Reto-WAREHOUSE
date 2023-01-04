@@ -79,30 +79,18 @@ public class Factura {
 	}
 	
 	//añadir una linea a la factura
-	public void addLinea(LineaFactura linea ){
+	public void addLinea(LineaFactura linea, Articulo art){
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("DATOS DE LINEAFACTURA");
 		System.out.println("Indica el numero de la linea");
 		int numeroFactLin= Integer.parseInt(teclado.nextLine());
-		//parte del articulo
-		System.out.println("Indica el numero del articulo");
-		String articuloNum=teclado.nextLine();
-		System.out.println("Indica el nombre del producto");
-		String articuloNom=teclado.nextLine();
-		System.out.println("Introduce la cantidad");
-		System.out.println("Introduce la marca del producto");
-		String articuloMarc=teclado.nextLine();
-		System.out.println("Indica la capidad que tiene la botella");
-		int articuloCap=Integer.parseInt(teclado.nextLine());
-		System.out.println("Indica el precio del articulo");
-		double articuloPrec=Double.parseDouble(teclado.nextLine());
-		//
 		System.out.println("Introduce la cantidad");
 		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
 		linea.setNumero(numeroFactLin);
-		linea.setArticulo(articuloNum,articuloNom,articuloMarc, articuloCap,articuloPrec);
 		linea.setCantidad(cantidadFacLin);
+		
 		lineas.add(linea);
+		lineas.add(art.preguntarDatosArt(art));
 	}
 		
 	public double precioTotal() {

@@ -3,6 +3,7 @@ package wareHouse;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class LineaFactura extends Factura {
@@ -66,6 +67,32 @@ public class LineaFactura extends Factura {
 	
 		}
 		writer.close();
+	}
+	
+	public LineaFactura preguntarDatosArt(Articulo art) {
+		Scanner teclado = new Scanner(System.in);
+		//parte del articulo
+		System.out.println("Indica el numero del articulo");
+		String articuloNum=teclado.nextLine();
+		System.out.println("Indica el nombre del producto");
+		String articuloNom=teclado.nextLine();
+		System.out.println("Introduce la cantidad");
+		System.out.println("Introduce la marca del producto");
+		String articuloMarc=teclado.nextLine();
+		System.out.println("Indica la capidad que tiene la botella");
+		int articuloCap=Integer.parseInt(teclado.nextLine());
+		System.out.println("Indica el precio del articulo");
+		double articuloPrec=Double.parseDouble(teclado.nextLine());
+		//
+		
+		art.setName(articuloMarc);
+		art.setCode(articuloMarc);
+		art.setMark(articuloMarc);
+		art.setCapacidadBotella(articuloCap);
+		art.setPrecio(articuloPrec);
+		art.setStock(articuloCap);
+		articulo.add(art);
+		return art;
 	}
 	
 	
