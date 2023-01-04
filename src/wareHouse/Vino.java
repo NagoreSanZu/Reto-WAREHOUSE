@@ -42,6 +42,16 @@ public class Vino extends Articulo  implements Alcoholico{
 		return "Vino color=" + color + ", origen=" + origen + ", anio=" + anio + ", tipoDeUva=" + tipoDeUva
 				+ ", gradosAlcohol=" + gradosAlcohol ;
 	}
+	@Override
+	public boolean esFuerte() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public int calcularTasa() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
    
 	

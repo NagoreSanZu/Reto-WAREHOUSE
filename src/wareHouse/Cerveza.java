@@ -29,6 +29,16 @@ public class Cerveza extends Articulo implements Alcoholico{
 	public String toString() {
 		return "Cerveza origen=" + origen + ", cereales=" + cereales + ", gradosAlcohol=" + gradosAlcohol;
 	}
+	@Override
+	public boolean esFuerte() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public int calcularTasa() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 	
