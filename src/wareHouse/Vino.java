@@ -45,11 +45,28 @@ public class Vino extends Articulo  implements Alcoholico{
 	@Override
 	public boolean esFuerte() {
 		// TODO Auto-generated method stub
-		return false;
+		if (this.gradosAlcohol > 13.5 ) {
+			return true;
+
+		}else {
+			return false;
+
+		}
+		
 	}
 	@Override
-	public int calcularTasa() {
-		// TODO Auto-generated method stub
+	public double calcularTasa() {
+		
+		double tasaPorL, total;
+		if (this.gradosAlcohol > 13.5 ) {
+		tasaPorL=	TASA_BEBIDAS_FUERTES/100;
+		total= getCapacidadBotella()*tasaPorL;
+
+		}else if (this.gradosAlcohol < 13.5 ){
+			tasaPorL=	TASA_BEBIDAS_SUAVES/100;
+			total= getCapacidadBotella()*tasaPorL;
+
+		}
 		return 0;
 	}
 	
