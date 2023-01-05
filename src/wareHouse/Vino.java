@@ -57,7 +57,7 @@ public class Vino extends Articulo  implements Alcoholico{
 	@Override
 	public double calcularTasa() {
 		
-		double tasaPorL, total;
+		double tasaPorL, total=0;
 		if (this.gradosAlcohol > 13.5 ) {
 		tasaPorL=	TASA_BEBIDAS_FUERTES/100;
 		total= getCapacidadBotella()*tasaPorL;
@@ -67,7 +67,7 @@ public class Vino extends Articulo  implements Alcoholico{
 			total= getCapacidadBotella()*tasaPorL;
 
 		}
-		return 0;
+		return total;
 	}
 	
    
