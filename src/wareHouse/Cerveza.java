@@ -41,9 +41,17 @@ public class Cerveza extends Articulo implements Alcoholico{
 		}
 	}
 	@Override
-	public int calcularTasa() {
-		// TODO Auto-generated method stub
-		return 0;
+	public double calcularTasa() {
+		double tasaPorL, totalC=0;
+		if (this.gradosAlcohol > 7 ) {
+		tasaPorL=	TASA_BEBIDAS_FUERTES/100;
+		totalC= getCapacidadBotella()*tasaPorL;
+
+		}else if (this.gradosAlcohol < 7 ){
+			tasaPorL=	TASA_BEBIDAS_SUAVES/100;
+			totalC= getCapacidadBotella()*tasaPorL;
+
+		}		return totalC;
 	}
 	
 	
