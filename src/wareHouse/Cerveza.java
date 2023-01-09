@@ -1,5 +1,7 @@
 package wareHouse;
 
+import java.util.Scanner;
+
 public class Cerveza extends Articulo implements Alcoholico {
 
 	private String origen;
@@ -68,16 +70,17 @@ public class Cerveza extends Articulo implements Alcoholico {
 		return false;
 	}
 	
-	System.out.println("INCREMENTAR CERVEZA");
-	System.out.println("Cual es su origen");
-	String origenCerveza=teclado.nextLine();
-	System.out.println("Cual son sus cereales??");
-	String cerealesCerveza=teclado.nextLine();
-	System.out.println("Cuantos grados de alcohol?");
-	double gradosAlcoholCerveza = Double.parseDouble(teclado.nextLine());
-	cerv.setOrigen(origenCerveza);
-	cerv.setCereales(cerealesCerveza);
-	cerv.setGradosAlcohol(gradosAlcoholCerveza);
-	cerveza.add(cerv);
+	public void agregarCerveza(){
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("INCREMENTAR CERVEZA");
+		System.out.println("Cual es su origen");
+		String origenCerveza=teclado.nextLine();
+		System.out.println("Cual son sus cereales??");
+		String cerealesCerveza=teclado.nextLine();
+		System.out.println("Cuantos grados de alcohol?");
+		double gradosAlcoholCerveza = Double.parseDouble(teclado.nextLine());
+		
+	}
+
 
 }
