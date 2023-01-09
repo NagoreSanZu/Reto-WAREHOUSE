@@ -27,6 +27,10 @@ public class Almacen {
 			if (partes[1].equals("vino")) {
 				Vino vino = new Vino(partes[0], partes[1], partes[2], Integer.parseInt(partes[3]), Double.parseDouble(partes[4]),Integer.parseInt(partes[5]),partes[6],partes[7],Integer.parseInt(partes[8]),partes[9],Double.parseDouble(partes[10]));
 			}
+			if (partes[1].equals("cerveza")) {
+				Cerveza cerveza = new Cerveza(partes[0], partes[1], partes[2], Integer.parseInt(partes[3]), Double.parseDouble(partes[4]),Integer.parseInt(partes[5]),partes[6],partes[7],Double.parseDouble(partes[8]));
+			}
+			
 		}
 		
 
