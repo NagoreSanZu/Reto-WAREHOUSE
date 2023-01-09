@@ -198,29 +198,7 @@ public abstract class  Articulo  extends LineaFactura{
 	
 	//saludable
 	
-	public void saludable(Vino bino) {
-		boolean esSaludableV =false;
-	for (Vino Bino : vino) {
-		if (bino.getOrigen() == "Navarra") {
-			esSaludableV =true;
-			System.out.println(Bino);
-		}else {
-			esSaludableV=false;
-		}
-		
-	}
-		boolean esSaludableR =false;
-	for (Refresco Refres : refresco) {
-		if (Refres.getCantidadAzucar() <= 20) {
-			esSaludableR =true;
-			System.out.println(Refres);
-		}else {
-			esSaludableR=false;
-		}
-		
-	}
-		
-	}
+	public abstract void saludable();
 	
 	//precio total
 	
