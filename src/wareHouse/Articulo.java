@@ -69,144 +69,59 @@ public abstract class  Articulo  extends LineaFactura{
 	@Override
 	public String toString() {
 		
+		//poner punto y coma
 		
 		return "Articulo code=" + code + ", name=" + name + ", mark=" + mark + ", capacidadBotella=" + capacidadBotella
 				+ ", precio=" + precio + ", stock=" + stock ;
 	}
 	
-	public void incrementarStock(Vino bino, Cerveza cerv, Refresco refres) {
-	
-		Scanner teclado = new Scanner(System.in);
-		System.out.println("De que articulo quieres incrementar el stock? ");
-		System.out.println("1- Vino 2-Cerveza 3-Refresco");
-		int numInc = Integer.parseInt(teclado.nextLine());
+	public void incrementarStock(int cantidad) {
+	this.stock=this.stock+cantidad;
 		
-		if (numInc==1) {
-			System.out.println("INCREMENTAR VINO");
-			System.out.println("De que color es el vino?");
-			String colorVino=teclado.nextLine();
-			System.out.println("De que origen es el vino?");
-			String origenVino=teclado.nextLine();
-			System.out.println("De que ali es el vino?");
-			int anoVino =Integer.parseInt(teclado.nextLine());
-			System.out.println("Que tipo de uva tiene?");
-			String tipoUva =teclado.nextLine();
-			System.out.println("Cuantos grados tine el alchol?");
-			double gradosVino =Double.parseDouble(teclado.nextLine());
-			bino.setColor(colorVino);
-			bino.setOrigen(origenVino);
-			bino.setAnio(anoVino);
-			bino.setTipoDeUva(tipoUva);
-			bino.setGradosAlcohol(gradosVino);
-			vino.add(bino);
-			
-			
-			for (Articulo articulo2 : articulo) {
-				if (this.name == "Vino"|| this.name=="vino") {
-					stock = stock +1;
-				}
-		
-			}
-		}
-			
-		if (numInc ==2) {
-			System.out.println("INCREMENTAR CERVEZA");
-			System.out.println("Cual es su origen");
-			String origenCerveza=teclado.nextLine();
-			System.out.println("Cual son sus cereales??");
-			String cerealesCerveza=teclado.nextLine();
-			System.out.println("Cuantos grados de alcohol?");
-			double gradosAlcoholCerveza = Double.parseDouble(teclado.nextLine());
-			cerv.setOrigen(origenCerveza);
-			cerv.setCereales(cerealesCerveza);
-			cerv.setGradosAlcohol(gradosAlcoholCerveza);
-			cerveza.add(cerv);
-			
-			for (Articulo articulo2 : articulo) {
-				if (this.name == "cerveza"|| this.name=="Cerveza") {
-					stock = stock +1;
-				}
-			
-		}
-		}
-		if(numInc==3) {
-			System.out.println("INCREMENTAR REFRESCO");
-			System.out.println("Que sabor tiene");
-			String saborRefres=teclado.nextLine();
-			System.out.println("Es un zumo? si/no");
-			String zumRefres=teclado.nextLine();
-			boolean zumoRefresTF =false;
-			if(zumRefres=="si"||zumRefres=="Si") {
-				zumoRefresTF=true;
-			}
-			if (zumRefres=="no"||zumRefres=="No") {
-				zumoRefresTF=false;
-			}
-			System.out.println("Tiene gaseosa?si/no");
-			String gaseosaRefres=teclado.nextLine();
-			boolean gaseosaRefresTF=false;
-			if(gaseosaRefres=="si"||gaseosaRefres=="Si") {
-				gaseosaRefresTF=true;
-			}
-			if (gaseosaRefres=="no"||gaseosaRefres=="No") {
-				gaseosaRefresTF=false;
-			}
-			
-			System.out.println("Cuanta cantidad de azucar tiene?");
-			int cantidadRefresco=Integer.parseInt(teclado.nextLine());
-			
-			refres.setSabor(saborRefres);
-			refres.setZumo(zumoRefresTF);
-			refres.setGaseoso(gaseosaRefresTF);
-			refres.setCantidadAzucar(cantidadRefresco);
-			refresco.add(refres);
-		
-			for (Articulo articulo2 : articulo) {
-				if (this.name == "refresco"|| this.name=="Refresco") {
-					stock = stock +1;
-				}
-		
-			}
-			
-		}
 	}
 	
 	
 	
 	//neceista mejoras 
 
-	public void disminuirStock() {
-		Scanner teclado = new Scanner(System.in);
-		System.out.println("Indica el codigo del articulo del cual quieres diminuir el stock");
-		String ResDisStock=teclado.nextLine();
-		for (Articulo articulo2 : articulo) {
-			if(ResDisStock == this.code) {
-				stock= stock-1;
-			}
-			
+	public void disminuirStock(int cantidad) {
+	Scanner teclado = new Scanner(System.in);
+	
+		if (cantidad>stock) {
+			System.out.println("ERROR No queda stock");
+			do {
+				System.out.println("Intoduce una cantidad");
+				cantidad=teclado.nextInt();
+
+			}while(cantidad>stock);
+				
 		}
+		
+		this.stock= stock-cantidad;
+		
 		
 		
 	}	
 	
 	//visualizar
 	public void visualizarArticulo() {
-		for (Articulo articulo2 : articulo) {
-			System.out.println(articulo2);
-		}
+		
+			System.out.println("Articulo code=" + code + ", name=" + name + ", mark=" + mark + ", capacidadBotella=" + capacidadBotella
+					+ ", precio=" + precio + ", stock=" + stock );
+		
 	}
 	
 	//saludable
 	
-	public abstract void saludable();
+	public abstract boolean saludable();
 	
 	//precio total
 	
-	public void precioTotalArt(Articulo arti) {
+	public void precioTotalArt() {
 		double total=0;
-		for (Articulo articulo2 : articulo) {
-			total=total+arti.getPrecio();
-		}
+			total=precio*stock;
+			System.out.println("El precio total es "+total);
+		
 	}
 	
 	
