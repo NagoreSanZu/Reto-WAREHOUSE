@@ -3,7 +3,7 @@ package wareHouse;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class  Articulo  extends LineaFactura{
+public abstract class  Articulo  {
  
 	private String code;
 	private String name;
@@ -12,9 +12,7 @@ public abstract class  Articulo  extends LineaFactura{
 	private double precio;
 	private int stock;
 	
-	
-	
-	
+
 	public String getCode() {
 		return code;
 	}
@@ -69,8 +67,8 @@ public abstract class  Articulo  extends LineaFactura{
 		
 		//poner punto y coma
 		
-		return "Articulo code=" + code + ", name=" + name + ", mark=" + mark + ", capacidadBotella=" + capacidadBotella
-				+ ", precio=" + precio + ", stock=" + stock ;
+		return "Articulo " + code + ";" + name + ";" + mark + ";" + capacidadBotella
+				+ ";" + precio + ";" + stock ;
 	}
 	
 	public void incrementarStock(int cantidad) {
