@@ -34,31 +34,28 @@ public class Refresco extends Articulo{
 	}
 	@Override
 	public String toString() {
-		return "Refresco sabor=" + sabor + ", zumo=" + zumo + ", gaseoso=" + gaseoso + ", cantidadAzucar="
+		return   sabor + ";" + zumo + ";"+ gaseoso+";" + gaseoso + ";"
 				+ cantidadAzucar ;
 	}
 	
 	//visualizar propiedades del refresco
 	public void visualizarPropiedades() {
-		for (Refresco Refres : refresco) {
-			System.out.println(Refres);
-		}
+			System.out.println("Refresco sabor=" + sabor + ", zumo=" + zumo + ", gaseoso=" + gaseoso + ", cantidadAzucar="
+					+ cantidadAzucar );
+		
 	}
 	
 	
 	//es saludable?
 	
-	public void esSaludable() {
+	public boolean esSaludable() {
 		boolean esSaludableR =false;
-		for (Refresco Refres : refresco) {
-			if (Refres.getCantidadAzucar() <= 20) {
+			if (this.cantidadAzucar <= 20) 
 				esSaludableR =true;
-				System.out.println(Refres);
-			}else {
-				esSaludableR=false;
-			}
+				
+			return esSaludableR;
 			
 		}
-	}
+	
 	
 }
