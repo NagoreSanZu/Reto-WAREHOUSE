@@ -11,9 +11,7 @@ public abstract class  Articulo  extends LineaFactura{
 	private int capacidadBotella;
 	private double precio;
 	private int stock;
-	ArrayList <Cerveza>cerveza=new ArrayList<Cerveza>();
-	ArrayList <Vino> vino = new ArrayList <Vino>();
-	ArrayList <Refresco>refresco =new ArrayList<Refresco>();
+	
 	
 	
 	
