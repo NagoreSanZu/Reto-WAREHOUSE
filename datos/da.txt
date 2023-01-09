@@ -1,0 +1,3 @@
+1;refreso;Fanta;255;1;5;naranja;si;si;25
+2;vino;Fidencio;900;5.50;3;tinto;navarra;2022;7
+3;cerveza;Voldaham;333;1.90;9;espana;cebada;8
