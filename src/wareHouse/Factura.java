@@ -20,6 +20,7 @@ public class Factura {
 	private Date fecha =new Date();
 	private String concepto;
 	private ArrayList <LineaFactura> lineas = new ArrayList<>();
+
 	
 	//getter and setters
 	
@@ -86,19 +87,32 @@ public class Factura {
 		int numeroFactLin= Integer.parseInt(teclado.nextLine());
 		System.out.println("Introduce la cantidad");
 		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
+	
 		linea.setNumero(numeroFactLin);
-		linea.setCantidad(cantidadFacLin);
 		
+		
+		Articulo art1 = null;
+		do {
+			System.out.println("Indica el codigo del articulo");
+			String codigo=teclado.nextLine();
+			art1 = Almacen.articulo(codigo);
+		}while(art1==null);
+		linea.setArticulo(art1);
 		lineas.add(linea);
-		lineas.add(art.preguntarDatosArt(art));
 	}
+	
+	
+	//añadir una linea de articulo
+	
+	
+	
 		
 	public double precioTotal() {
 	
 		double total=0;
-		for (int i = 0; i < lineas.size(); i++) {
-			total=total+lineas.get(i).precioTotal();
-		}
+	
+			total=total+precio;
+		
 		
 		return total;
 	}
@@ -149,7 +163,6 @@ public class Factura {
 		}
 		
 		LineaFactura imprimatu= new LineaFactura();
-		imprimatu.imprimirArticulo();
 		
 		
 		
