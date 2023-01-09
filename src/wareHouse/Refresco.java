@@ -54,8 +54,7 @@ public class Refresco extends Articulo{
 	
 	//visualizar propiedades del refresco
 	public void visualizarPropiedades() {
-			System.out.println("Refresco sabor=" + sabor + ", zumo=" + zumo + ", gaseoso=" + gaseoso + ", cantidadAzucar="
-					+ cantidadAzucar );
+			System.out.println("Refresco" + sabor + ";" + zumo + ";" + gaseoso + ";"+ cantidadAzucar );
 		
 	}
 	
