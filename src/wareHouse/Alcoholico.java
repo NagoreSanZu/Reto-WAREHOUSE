@@ -7,5 +7,5 @@ public interface Alcoholico {
 	
 	public   boolean esFuerte();
 	
-	public int calcularTasa();
+	public double calcularTasa();
 }
