@@ -63,8 +63,8 @@ public class Vino extends Articulo implements Alcoholico {
 
 	@Override
 	public String toString() {
-		return "Vino color=" + color + ", origen=" + origen + ", anio=" + anio + ", tipoDeUva=" + tipoDeUva
-				+ ", gradosAlcohol=" + gradosAlcohol;
+		return "Vino" + color + ";" + origen + ";" + anio + ";" + tipoDeUva
+				+ ";" + gradosAlcohol;
 	}
 
 	@Override
