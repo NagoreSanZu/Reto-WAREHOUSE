@@ -110,9 +110,9 @@ public class Factura {
 	public double precioTotal() {
 	
 		double total=0;
-	
-			total=total+precio;
-		
+		for (int i = 0; i < lineas.size(); i++) {
+			total=total+lineas.get(i).precioTotal();
+		}
 		
 		return total;
 	}
@@ -162,7 +162,7 @@ public class Factura {
 			writer.println(lineaFactura.toString());
 		}
 		
-		LineaFactura imprimatu= new LineaFactura();
+		
 		
 		
 		
