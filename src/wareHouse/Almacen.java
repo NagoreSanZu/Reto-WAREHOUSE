@@ -145,6 +145,7 @@ public class Almacen {
 		else if (orden.equals("DESC")) {
 			articulos.sort(new CompararStockDESC() );
 		}
+		System.out.println(articulos);
 	}
 	
 }//fin
