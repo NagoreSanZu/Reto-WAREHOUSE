@@ -41,6 +41,8 @@ public class Almacen {
 
 	}
 	
+	//buscador
+	
 	public static Articulo articulo(String codigo) {
 		for (Articulo articulo : articulos) {
 			if(codigo.equals(articulo.getCode()))
@@ -48,5 +50,22 @@ public class Almacen {
 		}
 		return null;
 	}
+	
+	
+	//metodo el mas caro
+	
+	public Articulo elMasCaro() {
+		Articulo arti =null;
+		double precMax=0;
+		for (Articulo articulo : articulos) {
+			if (articulo.getPrecio()>precMax) {
+				precMax=articulo.getPrecio();
+				arti=articulo;
+			}
+		}
+		return arti;
+	}
+	
+	
 	
 }
