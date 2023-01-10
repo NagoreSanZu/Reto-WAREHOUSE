@@ -81,4 +81,18 @@ public class Almacen {
 	}
 	
 	
+	//stock justo
+	
+	public ArrayList <Articulo> stockJusto(){
+		ArrayList <Articulo> articulosStockJusto = new ArrayList<Articulo>();
+		for (Articulo articulo : articulos) {
+			if (articulo.getStock()<=10) {
+				articulosStockJusto.add(articulo);
+			}
+		}
+		
+		return articulosStockJusto;
+	}
+	
+	
 }
