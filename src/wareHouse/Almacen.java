@@ -55,7 +55,7 @@ public class Almacen {
 	//metodo el mas caro
 	
 	public Articulo elMasCaro() {
-		Articulo arti =null;
+		Articulo arti = null;
 		double precMax=0;
 		for (Articulo articulo : articulos) {
 			if (articulo.getPrecio()>precMax) {
