@@ -79,17 +79,17 @@ public class Cerveza extends Articulo implements Alcoholico {
 		return false;
 	}
 	
-	public void agregarCerveza(){
-		Scanner teclado = new Scanner(System.in);
-		System.out.println("INCREMENTAR CERVEZA");
-		System.out.println("Cual es su origen");
-		String origenCerveza=teclado.nextLine();
-		System.out.println("Cual son sus cereales??");
-		String cerealesCerveza=teclado.nextLine();
-		System.out.println("Cuantos grados de alcohol?");
-		double gradosAlcoholCerveza = Double.parseDouble(teclado.nextLine());
-		
-	}
+//	public void agregarCerveza(){
+//		Scanner teclado = new Scanner(System.in);
+//		System.out.println("INCREMENTAR CERVEZA");
+//		System.out.println("Cual es su origen");
+//		String origenCerveza=teclado.nextLine();
+//		System.out.println("Cual son sus cereales??");
+//		String cerealesCerveza=teclado.nextLine();
+//		System.out.println("Cuantos grados de alcohol?");
+//		double gradosAlcoholCerveza = Double.parseDouble(teclado.nextLine());
+//		
+//	}
 
 
 }
