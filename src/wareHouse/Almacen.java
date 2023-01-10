@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Almacen {
-	 static ArrayList <Articulo>articulos = new ArrayList<Articulo>();
+	 ArrayList <Articulo>articulos = new ArrayList<Articulo>();
 
 	public void cargarDatos() throws FileNotFoundException {
 		File file = new File("datos/da.txt");
@@ -43,7 +43,7 @@ public class Almacen {
 	
 	//buscador
 	
-	public static Articulo articulo(String codigo) {
+	public Articulo articulo(String codigo) {
 		for (Articulo articulo : articulos) {
 			if(codigo.equals(articulo.getCode()))
 				return articulo;
@@ -122,7 +122,18 @@ public class Almacen {
 			}
 		}
 		return articuloEqui;
-
+	}
+	
+	public ArrayList <Articulo> ordenarPrecio(String orden){
+		
+		if (orden.equals("ASC") ) {
+			articulos.sort(new CompararPrecASC()  );
+			
+		}
+		else if (orden.equals("DESC")) {
+			articulos.sort(new CompararPrescDESC() );
+		}
+		return articulos;
 	}
 	
 	
