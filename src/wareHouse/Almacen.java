@@ -66,6 +66,19 @@ public class Almacen {
 		return arti;
 	}
 	
+	//hay Stock
+	
+	public boolean hayStock(String codigoProducto) {
+	
+		Articulo art= articulo(codigoProducto);
+		
+		if(art!=null && art.getStock() >0) {
+			return true;
+		}
+		
+		
+		return false;
+	}
 	
 	
 }
