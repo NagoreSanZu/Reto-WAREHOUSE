@@ -105,4 +105,25 @@ public class Almacen {
 		return false;
 	}
 	
-}
+	//equvalentes
+	
+	public ArrayList<Articulo> equivalentes(Articulo articulo){
+		ArrayList<Articulo> articuloEqui = new ArrayList <Articulo>();
+		for (Articulo articulo2 : articuloEqui) {
+			if (articulo instanceof Refresco && articulo.getPrecio() >= 0.20 ||articulo.getPrecio() <= 0.20 ) {
+				articuloEqui.add(articulo);
+			}
+			
+			else if (articulo instanceof Cerveza && articulo.getPrecio() >= 0.20 ||articulo.getPrecio() <= 0.20 ) {
+				articuloEqui.add(articulo);
+			}
+			else if (articulo instanceof Vino && articulo.getPrecio() >= 0.20 ||articulo.getPrecio() <= 0.20 ) {
+				articuloEqui.add(articulo);
+			}
+		}
+		return articuloEqui;
+
+	}
+	
+	
+}//fin
