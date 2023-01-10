@@ -80,7 +80,9 @@ public class Factura {
 	}
 	
 	//añadir una linea a la factura
-	public void addLinea(LineaFactura linea, Articulo art){
+	
+	//mejorar
+	public void addLinea(LineaFactura linea){
 		Scanner teclado = new Scanner(System.in);
 		System.out.println("DATOS DE LINEAFACTURA");
 		System.out.println("Indica el numero de la linea");
@@ -89,13 +91,14 @@ public class Factura {
 		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
 	
 		linea.setNumero(numeroFactLin);
-		
+		linea.setCantidad(cantidadFacLin);
 		
 		Articulo art1 = null;
 		do {
 			System.out.println("Indica el codigo del articulo");
 			String codigo=teclado.nextLine();
-			art1 = Almacen.articulo(codigo);
+			Almacen a = new Almacen();
+			art1 = a.articulo(codigo);
 		}while(art1==null);
 		linea.setArticulo(art1);
 		lineas.add(linea);
