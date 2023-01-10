@@ -137,4 +137,14 @@ public class Almacen {
 	}
 	
 	
+	public void ordenarPorStock(String orden) {
+		if (orden.equals("ASC") ) {
+			articulos.sort(new CompararStockASC()  );
+			
+		}
+		else if (orden.equals("DESC")) {
+			articulos.sort(new CompararStockDESC() );
+		}
+	}
+	
 }//fin
