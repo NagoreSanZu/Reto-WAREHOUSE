@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class Factura {
 
-	private int IVA =21;
+	static double IVA =1.21;
 	private int numero;
 	private  String nombreEmpresa;
 	private Date fecha =new Date();
@@ -24,7 +24,7 @@ public class Factura {
 	
 	//getter and setters
 	
-	public int getIVA() {
+	public double getIVA() {
 		return IVA;
 	}
 	public void setIVA(int iVA) {
@@ -89,7 +89,7 @@ public class Factura {
 		int numeroFactLin= Integer.parseInt(teclado.nextLine());
 		System.out.println("Introduce la cantidad");
 		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
-	
+		
 		linea.setNumero(numeroFactLin);
 		linea.setCantidad(cantidadFacLin);
 		
@@ -114,7 +114,7 @@ public class Factura {
 	
 		double total=0;
 		for (int i = 0; i < lineas.size(); i++) {
-			total=total+lineas.get(i).precioTotal();
+			total=total+lineas.get(i).precioTotal()*IVA;
 		}
 		
 		return total;
