@@ -95,4 +95,14 @@ public class Almacen {
 	}
 	
 	
+	//disponibilidad
+	
+	public boolean disponibilidad(int cantidad, String codigoProducto) {
+		Articulo art= articulo(codigoProducto);
+		if (art!=null&& art.getStock()>cantidad) {
+			return true;
+		}
+		return false;
+	}
+	
 }
