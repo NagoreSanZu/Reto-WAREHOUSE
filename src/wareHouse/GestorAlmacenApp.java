@@ -1,11 +1,13 @@
 package wareHouse;
 
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class GestorAlmacenApp {
+	
 
-	public void run() throws ParseException {
+	public void run() throws ParseException, FileNotFoundException {
 		
 		final int OPCION_UNO = 1;
 		final int OPCION_DOS = 2;
@@ -46,18 +48,18 @@ public class GestorAlmacenApp {
 					System.out.println("------MENU-------");
 					System.out.println(OPCION_BAT + ". Añadir una line a la factura");
 					System.out.println(OPCION_BI + ". Eliminar linea");
-					System.out.println(OPCION_HIRU + ". Guardar linea");
+					System.out.println(OPCION_HIRU + ". Guardar factura");
 					System.out.println(OPCION_LAU + ". Mostrar factura");
 					System.out.println(AGUR + ". Salir");
 					System.out.println("Elije una de las opciones");
 					opcion_factura = Integer.parseInt(scan.nextLine());
+					Scanner teclado = new Scanner(System.in);
 
 					switch (opcion_factura) {
 					case OPCION_BAT:
 						LineaFactura linea = new LineaFactura();
 						
 						
-						Scanner teclado = new Scanner(System.in);
 						System.out.println("DATOS DE LINEAFACTURA");
 						System.out.println("Indica el numero de la linea");
 						int numeroFactLin= Integer.parseInt(teclado.nextLine());
@@ -78,13 +80,17 @@ public class GestorAlmacenApp {
 						pedirFactura.addLinea(linea);
 						break;
 					case OPCION_BI:
-						System.out.println("segunda opcion seleccionada\n");
+						
+						System.out.println("Escribe el numero de la linea que quieres borrar");
+						int lineaBorra= Integer.parseInt(teclado.nextLine());
+					
+						pedirFactura.elimLinea(lineaBorra);
 						break;
 					case OPCION_HIRU:
-						System.out.println("tercera opcion seleccionada\n");
+						pedirFactura.guardarFichero(pedirFactura.nombreFichero());
 						break;
 					case OPCION_LAU:
-						System.out.println("tercera opcion seleccionada\n");
+						pedirFactura.imprimir();
 						break;
 					case AGUR:
 						System.out.println("ADIOS");
