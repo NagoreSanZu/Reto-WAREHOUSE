@@ -57,7 +57,8 @@ public class Factura {
 	
 	//pedir datos de la factura
 	
-	public void pedirDatos(Factura factura) throws ParseException {
+	public void pedirDatos() throws ParseException {
+		Factura factura = new Factura();
 		Scanner teclado = new Scanner(System.in);
 		SimpleDateFormat formatoLectura1 = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println("DATOS DE LA FACTURA");
@@ -83,24 +84,7 @@ public class Factura {
 	
 	//mejorar
 	public void addLinea(LineaFactura linea){
-		Scanner teclado = new Scanner(System.in);
-		System.out.println("DATOS DE LINEAFACTURA");
-		System.out.println("Indica el numero de la linea");
-		int numeroFactLin= Integer.parseInt(teclado.nextLine());
-		System.out.println("Introduce la cantidad");
-		int cantidadFacLin= Integer.parseInt(teclado.nextLine());
-		
-		linea.setNumero(numeroFactLin);
-		linea.setCantidad(cantidadFacLin);
-		
-		Articulo art1 = null;
-		do {
-			System.out.println("Indica el codigo del articulo");
-			String codigo=teclado.nextLine();
-			Almacen a = new Almacen();
-			art1 = a.articulo(codigo);
-		}while(art1==null);
-		linea.setArticulo(art1);
+	
 		lineas.add(linea);
 	}
 	
