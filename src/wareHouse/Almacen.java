@@ -8,6 +8,17 @@ import java.util.Scanner;
 public class Almacen {
 	 ArrayList <Articulo>articulos = new ArrayList<Articulo>();
 
+	 
+	 
+	 
+	public ArrayList<Articulo> getArticulos() {
+		return articulos;
+	}
+
+	public void setArticulos(ArrayList<Articulo> articulos) {
+		this.articulos = articulos;
+	}
+
 	public void cargarDatos() throws FileNotFoundException {
 		File file = new File("datos/da.txt");
 		Scanner scan = new Scanner(file);

@@ -55,8 +55,12 @@ public class Factura {
 		this.concepto = concepto;
 	}
 	
+	
 	//pedir datos de la factura
 	
+	public ArrayList<LineaFactura> getLineas() {
+		return lineas;
+	}
 	public void pedirDatos() throws ParseException {
 		Factura factura = new Factura();
 		Scanner teclado = new Scanner(System.in);

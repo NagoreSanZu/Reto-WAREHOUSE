@@ -10,6 +10,10 @@ public class Vino extends Articulo implements Alcoholico {
 	private String tipoDeUva;
 	private double gradosAlcohol;
 	
+	public Vino() {
+		
+	}
+	
 	public Vino(String name, String code, String mark, int capacidadBotella, double preciom, int stock,
 			String color, String origen,int anio,String tipoDeUva, double gradosAlcohol ) {
 		super(name, code, mark, capacidadBotella, preciom, stock);

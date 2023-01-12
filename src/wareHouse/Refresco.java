@@ -9,7 +9,9 @@ public class Refresco extends Articulo{
 	private boolean gaseoso;
 	private int cantidadAzucar;
 	
-	
+	public Refresco() {
+		
+	}
 	
 	
 	public Refresco(String name, String code, String mark, int capacidadBotella, double preciom, int stock,
