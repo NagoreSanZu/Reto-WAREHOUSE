@@ -11,7 +11,6 @@ public class GestorAlmacenApp {
 		final int OPCION_TRES = 3;
 		final int OPCION_CUATRO = 4;
 		final int OPCION_CINCO = 5;
-		final int OPCION_SEIS = 6;
 		final int SALIR = 0;
 
 		Scanner scan = new Scanner(System.in);
@@ -19,12 +18,11 @@ public class GestorAlmacenApp {
 
 		do {
 			System.out.println("------MENU-------");
-			System.out.println(OPCION_UNO + ". primera opcion");
-			System.out.println(OPCION_DOS + ". segunda opcion");
-			System.out.println(OPCION_TRES + ". tercera opcion");
-			System.out.println(OPCION_CUATRO + ". tercera opcion");
-			System.out.println(OPCION_CINCO + ". tercera opcion");
-			System.out.println(OPCION_SEIS + ". tercera opcion");
+			System.out.println(OPCION_UNO + ". Realizar venta");
+			System.out.println(OPCION_DOS + ". Realizar compra");
+			System.out.println(OPCION_TRES + ". Ver articulos saludables");
+			System.out.println(OPCION_CUATRO + ". Ver el articulo mas caro");
+			System.out.println(OPCION_CINCO + ". Ver los articulos con menos stock que x");
 			System.out.println(SALIR + ". Salir");
 			System.out.println("Elije una de las opciones");
 			opcion_menu = Integer.parseInt(scan.nextLine());
@@ -43,9 +41,6 @@ public class GestorAlmacenApp {
 				System.out.println("tercera opcion seleccionada\n");
 				break;
 			case OPCION_CINCO:
-				System.out.println("tercera opcion seleccionada\n");
-				break;
-			case OPCION_SEIS:
 				System.out.println("tercera opcion seleccionada\n");
 				break;
 			case SALIR:
