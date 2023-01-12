@@ -54,7 +54,28 @@ public class GestorAlmacenApp {
 
 					switch (opcion_factura) {
 					case OPCION_BAT:
-						System.out.println("primera opcion seleccionada\n");
+						LineaFactura linea = new LineaFactura();
+						
+						
+						Scanner teclado = new Scanner(System.in);
+						System.out.println("DATOS DE LINEAFACTURA");
+						System.out.println("Indica el numero de la linea");
+						int numeroFactLin= Integer.parseInt(teclado.nextLine());
+						System.out.println("Introduce la cantidad");
+						int cantidadFacLin= Integer.parseInt(teclado.nextLine());
+						
+						linea.setNumero(numeroFactLin);
+						linea.setCantidad(cantidadFacLin);
+						
+						Articulo art1 = null;
+						do {
+							System.out.println("Indica el codigo del articulo");
+							String codigo=teclado.nextLine();
+							Almacen a = new Almacen();
+							art1 = a.articulo(codigo);
+						}while(art1==null);
+						linea.setArticulo(art1);
+						pedirFactura.addLinea(linea);
 						break;
 					case OPCION_BI:
 						System.out.println("segunda opcion seleccionada\n");
