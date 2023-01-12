@@ -9,6 +9,7 @@ public class GestorAlmacenApp {
 
 	public void run() throws ParseException, FileNotFoundException {
 		Almacen almacen = new Almacen();
+		
 		final int OPCION_UNO = 1;
 		final int OPCION_DOS = 2;
 		final int OPCION_TRES = 3;
@@ -35,23 +36,19 @@ public class GestorAlmacenApp {
 				realizarVenta(SALIR, scan, opcion_menu);
 				break;
 			case OPCION_DOS:
-				String comprarArticulo;
-				Articulo articuloCompra = null;
-				do {
-					System.out.println("Indica el codigo del aritculo que quieres comprar?");
-					comprarArticulo = scan.nextLine();
-					articuloCompra= almacen.articulo(comprarArticulo);
-				}while(articuloCompra == null);
-				System.out.println("Indica la cantidad que quieras comprar");
-				int cantidadCompArt= Integer.parseInt(scan.nextLine());
+				realizarCompra(almacen, scan);
 				
-				articuloCompra.incrementarStock(cantidadCompArt);
-				
-				
-			
 				break;
 			case OPCION_TRES:
-				System.out.println("tercera opcion seleccionada\n");
+				
+				for (Articulo art : almacen.getArticulos()) {
+			
+					if(art.saludable()) {
+						art.visualizarArticulo();
+					}
+					
+					
+				}
 				break;
 			case OPCION_CUATRO:
 				System.out.println("tercera opcion seleccionada\n");
@@ -68,6 +65,20 @@ public class GestorAlmacenApp {
 
 		} while (opcion_menu != SALIR);
 		scan.close();
+	}
+
+	public void realizarCompra(Almacen almacen, Scanner scan) {
+		String comprarArticulo;
+		Articulo articuloCompra = null;
+		do {
+			System.out.println("Indica el codigo del aritculo que quieres comprar?");
+			comprarArticulo = scan.nextLine();
+			articuloCompra= almacen.articulo(comprarArticulo);
+		}while(articuloCompra == null);
+		System.out.println("Indica la cantidad que quieras comprar");
+		int cantidadCompArt= Integer.parseInt(scan.nextLine());
+		
+		articuloCompra.incrementarStock(cantidadCompArt);
 	}
 
 	public void realizarVenta(final int SALIR, Scanner scan, int opcion_menu)
