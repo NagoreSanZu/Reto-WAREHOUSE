@@ -54,7 +54,15 @@ public class GestorAlmacenApp {
 				almacen.elMasCaro();
 				break;
 			case OPCION_CINCO:
-				System.out.println("tercera opcion seleccionada\n");
+				Almacen artiAlma = new Almacen();
+				Articulo arti = null;
+				System.out.println("Introduce un numero de stock");
+				int cantidadStock=Integer.parseInt(scan.nextLine());
+				for (Articulo articulo : artiAlma.getArticulos() ) {
+					if (articulo.getStock()<=cantidadStock) {
+						arti.visualizarArticulo();
+					}
+				}
 				break;
 			case SALIR:
 				System.out.println("ADIOS");
