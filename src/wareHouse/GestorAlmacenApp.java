@@ -51,7 +51,7 @@ public class GestorAlmacenApp {
 				}
 				break;
 			case OPCION_CUATRO:
-				System.out.println("tercera opcion seleccionada\n");
+				almacen.elMasCaro();
 				break;
 			case OPCION_CINCO:
 				System.out.println("tercera opcion seleccionada\n");
