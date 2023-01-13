@@ -1,7 +1,10 @@
 package wareHouse;
 
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+
 public class Main {
-public static void main(String[] args) {
+public static void main(String[] args) throws FileNotFoundException, ParseException {
 	GestorAlmacenApp inicilizador=new GestorAlmacenApp();
 	inicilizador.run();
 	
