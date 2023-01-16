@@ -9,6 +9,7 @@ public class GestorAlmacenApp {
 
 	public void run() throws ParseException, FileNotFoundException {
 		Almacen almacen = new Almacen();
+		almacen.cargarDatos();
 		
 		final int OPCION_UNO = 1;
 		final int OPCION_DOS = 2;
@@ -44,14 +45,15 @@ public class GestorAlmacenApp {
 				for (Articulo art : almacen.getArticulos()) {
 			
 					if(art.saludable()) {
-						art.visualizarArticulo();
+					art.visualizarArticulo();
 					}
 					
 					
 				}
 				break;
 			case OPCION_CUATRO:
-				almacen.elMasCaro();
+				Articulo ar=almacen.elMasCaro();
+				System.out.println(ar);
 				break;
 			case OPCION_CINCO:
 				Almacen artiAlma = new Almacen();

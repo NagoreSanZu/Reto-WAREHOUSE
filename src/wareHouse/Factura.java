@@ -70,7 +70,7 @@ public class Factura {
 		int numeroFact=Integer.parseInt(teclado.nextLine());
 		System.out.println("Cual es el nombre de la Empresa?");
 		String nombreEmpresaFact=teclado.nextLine();
-		System.out.println("Cual es la fecha?? ");
+		System.out.println("Cual es la fecha?? yyyy-MM-dd");
 		String fechaFact= teclado.nextLine();
 		Date fechaLeida = formatoLectura1.parse(fechaFact);
 		System.out.println("Indica cual es el concepto:");
