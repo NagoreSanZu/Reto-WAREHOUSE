@@ -30,6 +30,12 @@ public class Factura {
 	public void setIVA(int iVA) {
 		IVA = iVA;
 	}
+	public static void setIVA(double iVA) {
+		IVA = iVA;
+	}
+	public void setLineas(ArrayList<LineaFactura> lineas) {
+		this.lineas = lineas;
+	}
 	public int getNumero() {
 		return numero;
 	}
@@ -60,28 +66,6 @@ public class Factura {
 	
 	public ArrayList<LineaFactura> getLineas() {
 		return lineas;
-	}
-	public void pedirDatos() throws ParseException {
-		Factura factura = new Factura();
-		Scanner teclado = new Scanner(System.in);
-		SimpleDateFormat formatoLectura1 = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println("DATOS DE LA FACTURA");
-		System.out.println("Cual es el numero de la factura?");
-		int numeroFact=Integer.parseInt(teclado.nextLine());
-		System.out.println("Cual es el nombre de la Empresa?");
-		String nombreEmpresaFact=teclado.nextLine();
-		System.out.println("Cual es la fecha?? yyyy-MM-dd");
-		String fechaFact= teclado.nextLine();
-		Date fechaLeida = formatoLectura1.parse(fechaFact);
-		System.out.println("Indica cual es el concepto:");
-		String conceptoFact=teclado.nextLine();
-		
-		factura.setNumero(numeroFact);
-		factura.setNombreEmpresa(nombreEmpresaFact);
-		factura.setFecha(fechaLeida);
-		factura.setConcepto(conceptoFact);
-		
-		
 	}
 	
 	//añadir una linea a la factura
@@ -163,12 +147,9 @@ public class Factura {
 //	//nombre fichero
 	
 	public String nombreFichero() {
-	
-		
-		return "facturas/"+this.numero+"_"+this.fecha+".txt";
-		
+		return "facturas/"+this.numero+"_"+(new SimpleDateFormat("yyyy_MM_dd").format(this.fecha))+".txt";
 	}
-	
+
 
 
 

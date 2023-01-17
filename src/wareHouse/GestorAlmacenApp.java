@@ -2,7 +2,11 @@ package wareHouse;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
+
+
 
 public class GestorAlmacenApp {
 	
@@ -34,7 +38,9 @@ public class GestorAlmacenApp {
 
 			switch (opcion_menu) {
 			case OPCION_UNO:
-				realizarVenta(SALIR, scan, opcion_menu);
+				//Factura pedirFactura = new Factura();
+				Factura factura = new Factura();
+				realizarVenta(SALIR, scan, opcion_menu, factura);
 				break;
 			case OPCION_DOS:
 				realizarCompra(almacen, scan);
@@ -76,7 +82,7 @@ public class GestorAlmacenApp {
 		} while (opcion_menu != SALIR);
 		scan.close();
 	}
-
+	//realizar compra
 	public void realizarCompra(Almacen almacen, Scanner scan) {
 		String comprarArticulo;
 		Articulo articuloCompra = null;
@@ -90,12 +96,15 @@ public class GestorAlmacenApp {
 		
 		articuloCompra.incrementarStock(cantidadCompArt);
 	}
-
-	public void realizarVenta(final int SALIR, Scanner scan, int opcion_menu)
-			throws ParseException, FileNotFoundException {
-		Factura pedirFactura = new Factura();
-		pedirFactura.pedirDatos();
+	//
+	
+	
+	//realiar venta
+	public void realizarVenta(final int SALIR, Scanner scan, int opcion_menu, Factura factura)
+		throws ParseException, FileNotFoundException {
+		Scanner teclado = new Scanner(System.in);
 		
+		PedirDatos(teclado, factura);
 		final int OPCION_BAT = 1;
 		final int OPCION_BI = 2;
 		final int OPCION_HIRU = 3;
@@ -114,7 +123,6 @@ public class GestorAlmacenApp {
 			System.out.println(AGUR + ". Salir");
 			System.out.println("Elije una de las opciones");
 			opcion_factura = Integer.parseInt(scan.nextLine());
-			Scanner teclado = new Scanner(System.in);
 
 			switch (opcion_factura) {
 			case OPCION_BAT:
@@ -131,27 +139,27 @@ public class GestorAlmacenApp {
 				linea.setCantidad(cantidadFacLin);
 				
 				Articulo art1 = null;
-				do {
+				
 					System.out.println("Indica el codigo del articulo");
 					String codigo=teclado.nextLine();
 					Almacen a = new Almacen();
 					art1 = a.articulo(codigo);
-				}while(art1==null);
+			
 				linea.setArticulo(art1);
-				pedirFactura.addLinea(linea);
+				factura.addLinea(linea);
 				break;
 			case OPCION_BI:
 				
 				System.out.println("Escribe el numero de la linea que quieres borrar");
 				int lineaBorra= Integer.parseInt(teclado.nextLine());
 			
-				pedirFactura.elimLinea(lineaBorra);
+				factura.elimLinea(lineaBorra);
 				break;
 			case OPCION_HIRU:
-				pedirFactura.guardarFichero(pedirFactura.nombreFichero());
+				factura.guardarFichero(factura.nombreFichero());
 				break;
 			case OPCION_LAU:
-				pedirFactura.imprimir();
+				factura.imprimir();
 				break;
 			case AGUR:
 				System.out.println("ADIOS");
@@ -162,9 +170,32 @@ public class GestorAlmacenApp {
 
 		} while (opcion_menu != SALIR);
 		
-		for (LineaFactura linea : pedirFactura.getLineas()) {
+		for (LineaFactura linea : factura.getLineas()) {
 			linea.getArticulo().disminuirStock(linea.getCantidad());
 		}
 		
 	}//fin de realizar venta
+	
+	private void PedirDatos(Scanner teclado, Factura factura) throws ParseException {
+
+		
+		SimpleDateFormat formatoLectura1 = new SimpleDateFormat("dd-MM-yyyy");
+		System.out.println("DATOS DE FACTURA");
+		System.out.println("Introduce el numero de factura");
+		int numeroFact= Integer.parseInt(teclado.nextLine());
+		System.out.println("Introduce el nombre de la empresa");
+		String nombreEmpresaFac= teclado.nextLine();
+		System.out.println("Escribe una fecha en formato dd-MM-yyyy (ejmplo: 23-01-2020)");
+		String fechaFact= teclado.nextLine();
+		Date fechaLeida = formatoLectura1.parse(fechaFact);
+		System.out.println("Introduce el concepto");
+		String conceptoFact = teclado.nextLine();
+		
+		
+		factura.setNumero(numeroFact);
+		factura.setNombreEmpresa(nombreEmpresaFac);
+		factura.setFecha(fechaLeida);
+		factura.setConcepto(conceptoFact);
+	}
+	
 }

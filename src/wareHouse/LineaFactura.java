@@ -45,7 +45,7 @@ public class LineaFactura  {
 	public String toString() {
 		
 
-		return "LineaFactura " + numero +  ";" + cantidad ;
+		return "LineaFactura --> El numero de la linea es " + numero +  "; La cantidad es: " + cantidad ;
 	}
 
 	public double precioTotal() {
