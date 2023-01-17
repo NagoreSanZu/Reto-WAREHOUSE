@@ -8,6 +8,11 @@ public class Cerveza extends Articulo implements Alcoholico {
 	private String cereales;
 	private double gradosAlcohol;
 	
+	
+	public Cerveza() {
+		
+	}
+	
 	public Cerveza(String name, String code, String mark, int capacidadBotella, double preciom, int stock,
 			String origen, String cereales, double gradosAlcohol) {
 		super(name, code, mark, capacidadBotella, preciom, stock);
@@ -16,6 +21,8 @@ public class Cerveza extends Articulo implements Alcoholico {
 		this.gradosAlcohol=gradosAlcohol;
 		
 	}
+	
+	
 
 	public String getOrigen() {
 		return origen;
