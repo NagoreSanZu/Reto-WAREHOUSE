@@ -22,21 +22,51 @@ public class Almacen {
 	public void cargarDatos() throws FileNotFoundException {
 		File file = new File("datos/da.txt");
 		Scanner scan = new Scanner(file);
+		Articulo artic= null;
+		
 		String linea;
 		String[] partes;
-		int i = 0;
+	
 
 		while (scan.hasNextLine()) {
 			linea = scan.nextLine();
 			partes = linea.split(";");
 
 			if (partes[1].equals("refresco")) {
-				Refresco refresco = new Refresco(partes[0], partes[1], partes[2], Integer.parseInt(partes[3]), Double.parseDouble(partes[4]),Integer.parseInt(partes[5]), partes[6],partes[7].equals("si") ? true : false,partes[8].equals("si") ? true : false,Integer.parseInt(partes[9]));
+				Refresco refresco = new Refresco();
+				
+				refresco.setCode(partes[0]);
+				refresco.setName(partes[1]);
+				refresco.setMark(partes[2]);
+				refresco.setCapacidadBotella(Integer.parseInt(partes[3]));
+				refresco.setPrecio(Double.parseDouble(partes[4]));
+				refresco.setStock(Integer.parseInt(partes[5]));
+	
+				refresco.setSabor(partes[6]);
+				refresco.setGaseoso(partes[7].equals("si") ? true : false);
+				refresco.setZumo(partes[8].equals("si") ? true : false);
+				refresco.setCantidadAzucar(Integer.parseInt(partes[9]));
+				
 				articulos.add(refresco);
+				
 			}
 			
+
+			
 			if (partes[1].equals("vino")) {
-				Vino vino = new Vino(partes[0], partes[1], partes[2], Integer.parseInt(partes[3]), Double.parseDouble(partes[4]),Integer.parseInt(partes[5]),partes[6],partes[7],Integer.parseInt(partes[8]),partes[9],Double.parseDouble(partes[10]));
+				Vino vino = new Vino();
+				vino.setCode(partes[0]);
+				vino.setName(partes[1]);
+				vino.setMark(partes[2]);
+				vino.setCapacidadBotella(Integer.parseInt(partes[3]));
+				vino.setPrecio(Double.parseDouble(partes[4]));
+				vino.setStock(Integer.parseInt(partes[5]));
+				
+				vino.setColor(partes[6]);
+				vino.setOrigen(partes[7]);
+				vino.setAnio(Integer.parseInt(partes[8]));
+				vino.setTipoDeUva(partes[9]);
+				vino.setGradosAlcohol(Integer.parseInt(partes[10]));
 				articulos.add(vino);
 			}
 			
